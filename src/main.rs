@@ -47,6 +47,11 @@ fn main() {
   let len = string_length(&x);
   println!("len is {}", len);
   println!("x is {}", x);
+
+  let mut x = 100;
+  println!("x is {}", x);
+  x = 200;
+  println!("x is {}", x);
 }
 
 fn string_length(s: &String) -> usize {
