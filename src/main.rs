@@ -1,18 +1,18 @@
-struct Sample {
-  x: i32,
-}
-impl Sample {
-  fn new(x: i32) -> Sample {
-    Sample {x: x}
-  }
+// struct Sample {
+//   x: i32,
+// }
+// impl Sample {
+//   fn new(x: i32) -> Sample {
+//     Sample {x: x}
+//   }
 
-  fn inc(&self) -> i32 {
-    self.x + 1
-  }
-  fn add(&self, x: i32) -> i32 {
-    self.x + x
-  }
-}
+//   fn inc(&self) -> i32 {
+//     self.x + 1
+//   }
+//   fn add(&self, x: i32) -> i32 {
+//     self.x + x
+//   }
+// }
 fn main() {
   // let x: f32 = 100.234;
   // println!("x is {}", x);
@@ -94,72 +94,126 @@ fn main() {
   // println!("ans is {}", ans);
   // let ans = add_two(10, 20);
   // println!("ans is {}", ans);
-  let ch = 'A';
-  println!("ch is {}", ch);
-  let ch = 'あ';
-  println!("ch is {}", ch);
-  let ch = 'A';
-  let u = ch as u8;
-  println!("u is {}", u);
-  let ch = u as char;
-  println!("ch is {}", ch);
-  let s = "hello rust world";
-  println!("s is {}", s);
-  let s = "hello rust world";
-  let hello = &s[0..5];
-  let world = &s[11..];
-  println!("hello is {}", hello);
-  println!("world is {}", world);
-  let len = s.len();
-  println!("s.len is {}", len);
-  let mut s = String::new();
-  s.push_str("hello ");
-  s.push_str("rust ");
-  s.push_str("world.");
-  println!("s is {}", s);
-  let hello = "HELLO";
-  let rust = "RUST";
-  let world = "WORLD.";
-  let s = format!("{} {} {}", hello, rust, world);
-  println!("s is {}", s);
-  // &String型の文字列
-  let s = "hello rust world.".to_string();
-  println!("s is {}", s);
-  let s = String::from("hello rust world.");
-  println!("s is {}", s);
-  let s = "こんにちは rust コードの世界";
-  println!("s is {}", s);
-  // 実行時エラー
+  // let ch = 'A';
+  // println!("ch is {}", ch);
+  // let ch = 'あ';
+  // println!("ch is {}", ch);
+  // let ch = 'A';
+  // let u = ch as u8;
+  // println!("u is {}", u);
+  // let ch = u as char;
+  // println!("ch is {}", ch);
+  // let s = "hello rust world";
+  // println!("s is {}", s);
+  // let s = "hello rust world";
   // let hello = &s[0..5];
   // let world = &s[11..];
+  // println!("hello is {}", hello);
+  // println!("world is {}", world);
+  // let len = s.len();
+  // println!("s.len is {}", len);
+  // let mut s = String::new();
+  // s.push_str("hello ");
+  // s.push_str("rust ");
+  // s.push_str("world.");
+  // println!("s is {}", s);
+  // let hello = "HELLO";
+  // let rust = "RUST";
+  // let world = "WORLD.";
+  // let s = format!("{} {} {}", hello, rust, world);
+  // println!("s is {}", s);
+  // // &String型の文字列
+  // let s = "hello rust world.".to_string();
+  // println!("s is {}", s);
+  // let s = String::from("hello rust world.");
+  // println!("s is {}", s);
+  // let s = "こんにちは rust コードの世界";
+  // println!("s is {}", s);
+  // // 実行時エラー
+  // // let hello = &s[0..5];
+  // // let world = &s[11..];
+  // // println!("こんにちは is {}", hello);
+  // // println!("コードの世界 is {}", world);
+  // // 以下は大丈夫。あくまで文字列のバイト位置を示している。
+  // let hello = &s[0..15];
+  // let world = &s[21..];
   // println!("こんにちは is {}", hello);
   // println!("コードの世界 is {}", world);
-  // 以下は大丈夫。あくまで文字列のバイト位置を示している。
-  let hello = &s[0..15];
-  let world = &s[21..];
-  println!("こんにちは is {}", hello);
-  println!("コードの世界 is {}", world);
-  let len = s.len();
-  println!("s.len is {}", len);
-  let s = "This is ねこ🐱neko 文字列";
-  // ベクターへ
-  let mut v: Vec<char> = Vec::new();
-  for c in s.chars() {
-    v.push(c);
+  // let len = s.len();
+  // println!("s.len is {}", len);
+  // let s = "This is ねこ🐱neko 文字列";
+  // // ベクターへ
+  // let mut v: Vec<char> = Vec::new();
+  // for c in s.chars() {
+  //   v.push(c);
+  // }
+  // // 上↑でcharに直してから8文字目から14文字目までを取得
+  // let v = &v[8..15];
+  // let mut s = String::new();
+  // for c in v {
+  //   s.push(*c);
+  // }
+  // println!("s is {}", s);
+  // let s = "hello rust world.";
+  // let a = &s[6..10];
+  // println!("a is {}", a);
+  // // 10ってわかりにくいなぁ...
+  // let a = &s[6..(6+4)];
+  // println!("a is {}", a);
+  let a = 10;
+  let b = 3;
+  let ans = a / b;
+  println!("a / b is {}", ans);
+  let a = 10.0;
+  let b = 3.0;
+  let ans = a / b;
+  println!("a / b is {}", ans);
+  let a: u8 = 0b1111;
+  let b: u8 = 0b0011;
+  println!("a & b is {:04b}", a & b);
+  println!("a | b is {:04b}", a | b);
+  let a: u8 = 0x02;
+  println!("a << 1 is {}", a << 1);
+  println!("a >> 1 is {}", a >> 1);
+  let v = vec![1, 2, 3, 4, 5];
+  let sum = vec_param(&v);
+  println!("sum is {}", sum);
+  let v = vec_return(10);
+  for i in v {
+    print!("{} ", i);
   }
-  // 上↑でcharに直してから8文字目から14文字目までを取得
-  let v = &v[8..15];
-  let mut s = String::new();
-  for c in v {
-    s.push(*c);
+  println!();
+  let mut v = vec![1, 2, 3, 4, 5];
+  vec_change(&mut v);
+  for i in v {
+    print!("{} ", i);
   }
-  println!("s is {}", s);
-  let s = "hello rust world.";
-  let a = &s[6..10];
-  println!("a is {}", a);
-  // 10ってわかりにくいなぁ...
-  let a = &s[6..(6+4)];
-  println!("a is {}", a);
+  println!();
+}
+
+fn vec_change(v: &mut Vec<i32>) {
+  println!("called vec_change");
+  for i in v {
+    *i *= 10;
+  }
+}
+
+fn vec_return(max: i32) -> Vec<i32> {
+  println!("called vec_return");
+  let mut v = Vec::new();
+  for i in 0..max {
+    v.push(i);
+  }
+  v
+}
+
+fn vec_param(v: &[i32]) -> i32 {
+  println!("called vec_param");
+  let mut sum = 0;
+  for i in v {
+    sum += i;
+  }
+  sum
 }
 
 // fn add_two(x: i32, y: i32) -> i32 {
