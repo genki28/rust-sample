@@ -160,61 +160,65 @@ fn main() {
   // // 10ってわかりにくいなぁ...
   // let a = &s[6..(6+4)];
   // println!("a is {}", a);
+  // let a = 10;
+  // let b = 3;
+  // let ans = a / b;
+  // println!("a / b is {}", ans);
+  // let a = 10.0;
+  // let b = 3.0;
+  // let ans = a / b;
+  // println!("a / b is {}", ans);
+  // let a: u8 = 0b1111;
+  // let b: u8 = 0b0011;
+  // println!("a & b is {:04b}", a & b);
+  // println!("a | b is {:04b}", a | b);
+  // let a: u8 = 0x02;
+  // println!("a << 1 is {}", a << 1);
+  // println!("a >> 1 is {}", a >> 1);
+  // let v = vec![1, 2, 3, 4, 5];
+  // let sum = vec_param(&v);
+  // println!("sum is {}", sum);
+  // let v = vec_return(10);
+  // for i in v {
+  //   print!("{} ", i);
+  // }
+  // println!();
+  // let mut v = vec![1, 2, 3, 4, 5];
+  // vec_change(&mut v);
+  // for i in v {
+  //   print!("{} ", i);
+  // }
+  // println!();
   let a = 10;
-  let b = 3;
-  let ans = a / b;
-  println!("a / b is {}", ans);
-  let a = 10.0;
-  let b = 3.0;
-  let ans = a / b;
-  println!("a / b is {}", ans);
-  let a: u8 = 0b1111;
-  let b: u8 = 0b0011;
-  println!("a & b is {:04b}", a & b);
-  println!("a | b is {:04b}", a | b);
-  let a: u8 = 0x02;
-  println!("a << 1 is {}", a << 1);
-  println!("a >> 1 is {}", a >> 1);
-  let v = vec![1, 2, 3, 4, 5];
-  let sum = vec_param(&v);
-  println!("sum is {}", sum);
-  let v = vec_return(10);
-  for i in v {
-    print!("{} ", i);
-  }
-  println!();
-  let mut v = vec![1, 2, 3, 4, 5];
-  vec_change(&mut v);
-  for i in v {
-    print!("{} ", i);
-  }
-  println!();
+  let b = 20;
+  let x = if a < b { 1 } else { 0 };
+  println!("x is {}", x);
 }
 
-fn vec_change(v: &mut Vec<i32>) {
-  println!("called vec_change");
-  for i in v {
-    *i *= 10;
-  }
-}
+// fn vec_change(v: &mut Vec<i32>) {
+//   println!("called vec_change");
+//   for i in v {
+//     *i *= 10;
+//   }
+// }
 
-fn vec_return(max: i32) -> Vec<i32> {
-  println!("called vec_return");
-  let mut v = Vec::new();
-  for i in 0..max {
-    v.push(i);
-  }
-  v
-}
+// fn vec_return(max: i32) -> Vec<i32> {
+//   println!("called vec_return");
+//   let mut v = Vec::new();
+//   for i in 0..max {
+//     v.push(i);
+//   }
+//   v
+// }
 
-fn vec_param(v: &[i32]) -> i32 {
-  println!("called vec_param");
-  let mut sum = 0;
-  for i in v {
-    sum += i;
-  }
-  sum
-}
+// fn vec_param(v: &[i32]) -> i32 {
+//   println!("called vec_param");
+//   let mut sum = 0;
+//   for i in v {
+//     sum += i;
+//   }
+//   sum
+// }
 
 // fn add_two(x: i32, y: i32) -> i32 {
 //   x + y
