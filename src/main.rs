@@ -6,6 +6,8 @@
 //     Sample {x: x}
 //   }
 
+mod fizzbuzz;
+
 //   fn inc(&self) -> i32 {
 //     self.x + 1
 //   }
@@ -14,6 +16,8 @@
 //   }
 // }
 fn main() {
+  fizzbuzz::main();
+  fizzbuzz::test();
   // let x: f32 = 100.234;
   // println!("x is {}", x);
   // let x: f64 = 100.234;
