@@ -8,6 +8,7 @@
 
 mod fizzbuzz;
 mod kuku;
+mod fib;
 
 //   fn inc(&self) -> i32 {
 //     self.x + 1
@@ -21,6 +22,8 @@ fn main() {
   fizzbuzz::test();
   kuku::main();
   kuku::year_map();
+  fib::main();
+  fib::question();
   // let x: f32 = 100.234;
   // println!("x is {}", x);
   // let x: f64 = 100.234;
