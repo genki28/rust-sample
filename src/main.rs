@@ -11,6 +11,7 @@ mod kuku;
 mod fib;
 mod coin_count;
 mod caesar_enc;
+mod prime;
 
 //   fn inc(&self) -> i32 {
 //     self.x + 1
@@ -28,6 +29,7 @@ fn main() {
   fib::question();
   coin_count::main();
   caesar_enc::main();
+  prime::main();
   // let x: f32 = 100.234;
   // println!("x is {}", x);
   // let x: f64 = 100.234;
